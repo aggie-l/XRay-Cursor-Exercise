@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Pacifico", cursive;
+  font-size: 1.5rem;
+  cursor: none;
+  background-color: black;
+}
+
+.text {
+  position: relative;
+  color: #40e0d0;
+  padding: 20px;
+}
+
+.text::before {
+  content: "The silver fox runs all night";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  clip-path: circle(40px at var(--x) var(--y));
+}
+
+.text:hover ~ .cursor {
+  transform: scale(2);
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: background, transform;
+  border: 2px solid #40e0d0;
+}
